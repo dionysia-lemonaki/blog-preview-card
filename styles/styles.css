@@ -78,3 +78,8 @@ img {
   flex-direction: column;
   gap: var(--spacing-lg);
 }
+
+.blog-card__image {
+  height: auto;
+  border-radius: 10px;
+}
