@@ -26,3 +26,12 @@
   --spacing-md: 0.75rem; /* 12px */
   --spacing-lg: 1.5rem; /* 24px */
 }
+
+/* FONTS */
+
+@font-face {
+  font-family: Figtree;
+  src: url("../assets/fonts/Figtree-VariableFont_wght.ttf");
+  font-weight: 300 900;
+  font-style: normal;
+}
