@@ -35,3 +35,30 @@
   font-weight: 300 900;
   font-style: normal;
 }
+
+/* GLOBAL STYLES */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--yellow);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+  padding: var(--spacing-lg);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
