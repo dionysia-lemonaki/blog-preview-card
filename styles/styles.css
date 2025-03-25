@@ -136,3 +136,14 @@ img {
   color: var(--gray-500);
   font-weight: var(--font-weight-medium);
 }
+
+.blog-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.blog-card__author-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-extrabold);
+}
