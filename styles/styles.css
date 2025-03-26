@@ -78,6 +78,16 @@ img {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
+  position: relative;
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.blog-card:hover {
+  box-shadow: 14px 14px 0 0 hsl(0, 0%, 0%);
+}
+
+.blog-card:focus-within {
+  box-shadow: 14px 14px 0 0 hsl(0, 0%, 0%);
 }
 
 .blog-card__image {
@@ -125,6 +135,20 @@ img {
 .blog-card__link {
   text-decoration: none;
   color: inherit;
+}
+
+.blog-card__link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.blog-card__link:hover,
+.blog-card__link:focus {
+  color: var(--yellow);
 }
 
 .blog-card__description {
