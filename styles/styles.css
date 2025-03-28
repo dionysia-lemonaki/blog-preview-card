@@ -102,7 +102,7 @@ img {
 }
 
 .blog-card__category {
-  width: max-content;
+  width: fit-content;
   background-color: var(--yellow);
   padding: var(--spacing-xs) var(--spacing-md);
   border-radius: 4px;
