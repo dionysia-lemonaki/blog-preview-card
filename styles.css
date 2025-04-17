@@ -1,0 +1,28 @@
+:root {
+  --color-yellow: hsl(47 88% 63%);
+  --color-white: hsl(0 0% 100%);
+  --color-gray-500: hsl(0 0% 42%);
+  --color-gray-950: hsl(0 0% 7%);
+
+  --font-family: Figtree, system-ui, sans-serif;
+
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.25rem; /* 20px */
+  --font-size-xl: 1.5rem; /* 24px */
+
+  --font-weight-md: 500;
+  --font-weight-xl: 800;
+
+  --line-height-base: 1.5;
+  --letter-spacing-base: 0;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 24px;
+
+  --radius-lg: 20px;
+  --radius-sm: 10px;
+}
