@@ -12,6 +12,22 @@
   --font-size-lg: 1.25rem; /* 20px */
   --font-size-xl: 1.5rem; /* 24px */
 
+  --font-size-fluid-sm: clamp(
+    var(--font-size-xs),
+    0.7143rem + 0.1786vw,
+    var(--font-size-sm)
+  );
+  --font-size-fluid-md: clamp(
+    var(--font-size-sm),
+    0.8393rem + 0.1786vw,
+    var(--font-size-md)
+  );
+  --font-size-fluid-lg: clamp(
+    var(--font-size-lg),
+    1.1786rem + 0.3571vw,
+    var(--font-size-xl)
+  );
+
   --font-weight-md: 500;
   --font-weight-xl: 800;
 
