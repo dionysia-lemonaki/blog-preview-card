@@ -26,3 +26,11 @@
   --radius-lg: 20px;
   --radius-sm: 10px;
 }
+
+@font-face {
+  font-family: Figtree;
+  src:
+    url("./assets/fonts/Figtree.woff2") format("woff2"),
+    url("./assets/fonts/Figtree.woff2") format("woff2-variations");
+  font-weight: 300 900;
+}
