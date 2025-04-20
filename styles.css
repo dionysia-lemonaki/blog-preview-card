@@ -95,6 +95,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+  position: relative;
 }
 
 .blog-card__image {
@@ -130,6 +131,15 @@ body {
 .blog-card__link {
   text-decoration: none;
   color: inherit;
+}
+
+.blog-card__link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .blog-card__description {
