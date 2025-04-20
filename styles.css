@@ -98,6 +98,14 @@ body {
   position: relative;
 }
 
+.blog-card:hover {
+  box-shadow: 14px 14px 0 0 hsl(0, 0%, 0%);
+}
+
+.blog-card:focus-within {
+  box-shadow: 14px 14px 0 0 hsl(0, 0%, 0%);
+}
+
 .blog-card__image {
   height: auto;
   border-radius: var(--radius-sm);
@@ -140,6 +148,16 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.blog-card__link:hover {
+  color: var(--color-yellow);
+}
+
+.blog-card__link:focus-visible {
+  color: var(--color-yellow);
+  outline: 3px dashed hsl(0, 0%, 0%);
+  outline-offset: 3px;
 }
 
 .blog-card__description {
