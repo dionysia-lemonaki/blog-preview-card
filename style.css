@@ -1,0 +1,48 @@
+:root {
+  /* --- Colours --- */
+  --yellow: hsl(47 88% 63%);
+  --white: hsl(0 0% 100%);
+  --gray-500: hsl(0 0% 42%);
+  --gray-950: hsl(0 0% 7%);
+  --black: hsl(0 0% 0%);
+
+  /* --- Semantic Colours --- */
+  --clr-text-primary: var(--gray-950);
+  --clr-text-secondary: var(--gray-500);
+
+  --clr-bg-body: var(--yellow);
+  --clr-bg-card: var(--white);
+
+  --clr-accent: var(--yellow);
+
+  /* --- Typography */
+  --font-sans: "Figtree", sans-serif;
+  --fw-md: 500;
+  --fw-xl: 800;
+
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-md: 1rem; /* 16px */
+  --fs-lg: 1.25rem; /* 20px */
+  --fs-xl: 1.5rem; /* 24px */
+
+  --text-fluid-sm: clamp(var(--fs-xs), 0.7143rem + 0.1786vw, var(--fs-sm));
+  --text-fluid-md: clamp(var(--fs-sm), 0.8393rem + 0.1786vw, var(--fs-md));
+  --text-fluid-lg: clamp(var(--fs-lg), 1.1786rem + 0.3571vw, var(--fs-xl));
+
+  --leading-base: 1.5;
+
+  /* --- Spacing --- */
+  --space-50: 4px;
+  --space-100: 8px;
+  --space-150: 12px;
+  --space-300: 24px;
+
+  /* Border Radius & Box Shadow */
+  --radius-sm: var(--space-50);
+  --radius-lg: 10px;
+  --radius-xl: 20px;
+
+  --shadow-default: var(--space-100) var(--space-100) 0 0 var(--black);
+  --shadow-hover: 14px 14px 0 0 var(--black);
+}
