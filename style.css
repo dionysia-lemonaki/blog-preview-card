@@ -68,6 +68,12 @@
 
 body {
   min-height: 100vh;
+
+  background-color: var(--clr-bg-body);
+  color: var(--clr-text-primary);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-md);
+  line-height: var(--leading-base);
 }
 
 img,
