@@ -68,6 +68,10 @@
 
 body {
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-300);
 
   background-color: var(--clr-bg-body);
   color: var(--clr-text-primary);
@@ -82,4 +86,17 @@ svg,
 video {
   display: block;
   max-width: 100%;
+}
+
+.card {
+  background-color: var(--clr-bg-card);
+  max-width: clamp(20.4375rem, 19.4196rem + 5.0893vw, 24rem);
+  padding: var(--space-300);
+  border: 1px solid var(--gray-950);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-default);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
 }
