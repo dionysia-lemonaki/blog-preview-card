@@ -105,3 +105,37 @@ video {
   height: auto;
   border-radius: var(--radius-lg);
 }
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-150);
+}
+
+.card__category {
+  background-color: var(--clr-accent);
+  align-self: flex-start;
+  padding: var(--space-50) var(--space-150);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-fluid-sm);
+  font-weight: var(--fw-xl);
+}
+
+.card__date {
+  font-size: var(--text-fluid-sm);
+}
+
+.card__title {
+  font-size: var(--text-fluid-lg);
+  font-weight: var(--fw-xl);
+}
+
+.card__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card__description {
+  font-size: var(--text-fluid-md);
+  color: var(--clr-text-secondary);
+}
