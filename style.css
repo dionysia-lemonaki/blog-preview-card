@@ -99,6 +99,11 @@ video {
   display: flex;
   flex-direction: column;
   gap: var(--space-300);
+
+  &:hover,
+  &:focus-within {
+    box-shadow: var(--shadow-hover);
+  }
 }
 
 .card__image {
@@ -133,6 +138,11 @@ video {
 .card__link {
   text-decoration: none;
   color: inherit;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--clr-accent);
+  }
 }
 
 .card__description {
