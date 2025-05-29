@@ -100,6 +100,8 @@ video {
   flex-direction: column;
   gap: var(--space-300);
 
+  position: relative;
+
   &:hover,
   &:focus-within {
     box-shadow: var(--shadow-hover);
@@ -143,6 +145,12 @@ video {
   &:focus-visible {
     color: var(--clr-accent);
   }
+}
+
+.card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
 }
 
 .card__description {
