@@ -43,3 +43,10 @@
   --shadow-default: var(--space-100) var(--space-100) 0 0 var(--black);
   --shadow-lg: 14px 14px 0 0 var(--black);
 }
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree-VariableFont.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
