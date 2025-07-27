@@ -75,6 +75,12 @@ body {
   font-size: var(--text-fluid-md);
   font-weight: var(--fw-md);
   line-height: var(--line-height);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-300);
 }
 
 .sr-only:not(:focus):not(:active) {
@@ -85,4 +91,16 @@ body {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.card {
+  background-color: var(--clr-bg-card);
+  max-width: 24rem;
+  padding: var(--space-300);
+  border: 1px solid var(--gray-950);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-default);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
 }
