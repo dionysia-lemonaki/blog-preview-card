@@ -97,7 +97,7 @@ body {
   background-color: var(--clr-bg-card);
   max-width: 24rem;
   padding: var(--space-300);
-  border: 1px solid var(--gray-950);
+  border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-default);
   display: flex;
@@ -108,4 +108,37 @@ body {
 .card__image {
   object-fit: cover;
   border-radius: var(--radius-md);
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-150);
+}
+
+.card__category {
+  background-color: var(--clr-accent);
+  align-self: flex-start;
+  padding: var(--space-50) var(--space-150);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-fluid-sm);
+  font-weight: var(--fw-xl);
+}
+
+.card__date {
+  font-size: var(--text-fluid-sm);
+}
+
+.card__title {
+  font-size: var(--text-fluid-lg);
+  font-weight: var(--fw-xl);
+}
+
+.card__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card__description {
+  color: var(--clr-text-secondary);
 }
