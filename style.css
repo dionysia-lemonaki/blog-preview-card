@@ -142,3 +142,14 @@ body {
 .card__description {
   color: var(--clr-text-secondary);
 }
+
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-150);
+}
+
+.card__name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-xl);
+}
