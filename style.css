@@ -76,3 +76,26 @@ img {
   display: block;
   max-width: 100%;
 }
+
+body {
+  background-color: var(--clr-bg-body);
+  color: var(--clr-text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-fluid-sm);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh);
+}
+
+/* --- utility classes --- */
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* --- end of utility classes ---- */
