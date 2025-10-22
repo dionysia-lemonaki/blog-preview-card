@@ -84,6 +84,12 @@ body {
   font-size: var(--fs-fluid-sm);
   font-weight: var(--fw-medium);
   line-height: var(--lh);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-300);
 }
 
 /* --- utility classes --- */
@@ -99,3 +105,15 @@ body {
 }
 
 /* --- end of utility classes ---- */
+
+.card {
+  background-color: var(--clr-bg-card);
+  max-width: var(--max-card);
+  padding: var(--space-300);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+}
