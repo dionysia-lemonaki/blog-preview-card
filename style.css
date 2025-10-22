@@ -52,3 +52,10 @@
   --shadow: var(--space-100) var(--space-100) 0 0 var(--clr-shadow);
   --shadow-hover: var(--space-150) var(--space-150) 0 0 var(--clr-shadow);
 }
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree-VariableFont.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
