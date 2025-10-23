@@ -118,6 +118,14 @@ body {
   flex-direction: column;
   gap: var(--space-300);
   position: relative;
+  transition: box-shadow 300ms ease-in-out;
+
+  &:hover {
+    box-shadow: var(--shadow-lg-hover);
+  }
+  &:focus-within {
+    box-shadow: var(--shadow-lg-hover);
+  }
 }
 
 .card__image {
@@ -153,6 +161,15 @@ body {
 .card__link {
   color: inherit;
   text-decoration: none;
+
+  &:hover {
+    color: var(--clr-text-hover);
+  }
+  &:focus-visible {
+    color: var(--clr-text-hover);
+    outline: 4px dotted var(--clr-text-primary);
+    outline-offset: 2px;
+  }
 }
 
 .card__link::after {
