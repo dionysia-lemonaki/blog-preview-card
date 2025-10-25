@@ -1,22 +1,16 @@
 # Frontend Mentor - Blog preview card solution
 
-This is a solution to the [Blog preview card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is my solution to the [Blog preview card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS).
 
 ## Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+  - [Project notes](#project-notes)
 
 ## Overview
 
@@ -26,22 +20,20 @@ Users should be able to:
 
 - See hover and focus states for all interactive elements on the page
 
-### Screenshot
+### Screenshots
 
-![](./screenshot.jpg)
+Mobile:
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+![](/assets/images/screenshots/mobile-screenshot.jpeg)
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
+Desktop:
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](/assets/images/screenshots/desktop-screenshot.jpeg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/blog-preview-card-KqmUh-8UbT)
+- [Live site URL](https://blog-preview-card-dionysialemonaki.vercel.app/)
 
 ## My process
 
@@ -50,63 +42,98 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+### Project notes
 
-### What I learned
+In the HTML, I used an `article` element for the card component to semantically represent an independent, standalone blog preview card. I then gave the card an accessible name by associating the `article` with its title (`h2`) using `aria-labelledby`, which improves accessibility for screen readers.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+For the images, since they are purely decorative and don't convey any important information to users, I left the `alt` attribute empty (`alt=""`) effectively hiding them from assistive technologies. Specifically, the author's avatar is decorative and the author's name follows the image. Therefore, using the author's name as alternative text would be redundant.
 
-To see how you can add code snippets, see below:
+Lastly, I used the `time` element with the `datetime` attribute in the `YYYY-MM-DD` format to semantically represent the publication date.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<p class="card__date">
+  <time datetime="2023-12-21">Published 21 Dec 2023</time>
+</p>
 ```
 
+In the CSS, the font sizes in the blog preview card component – for the category, date, title and description – are slightly smaller on mobile. To fluidly scale the typography from smaller to larger screens _without_ using media queries, I used the `clamp()` function with values generated from [Utopia](https://utopia.fyi/clamp/calculator?a=360,1240).
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+:root {
+  /* typography */
+
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-lg: 1.25rem; /* 20px */
+  --fs-xl: 1.5rem; /* 24px */
+
+  --fs-fluid-xs: clamp(var(--fs-xs), 0.6989rem + 0.2273vw, var(--fs-sm));
+  --fs-fluid-sm: clamp(var(--fs-sm), 0.8239rem + 0.2273vw, var(--fs-base));
+  --fs-fluid-lg: clamp(var(--fs-lg), 1.1477rem + 0.4545vw, var(--fs-xl));
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+For the images, to maintain the main image's aspect ratio and make it responsive – completely covering the available space while fitting its container on smaller screens – I used `object-fit:cover;`. For the author's avatar, since it is a small icon, I specified both its `width` and `height` in `rem` units so it scales appropriately when a user changes their text size preferences in their browser or device settings.
+
+```css
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.card__image {
+  object-fit: cover;
+}
+
+.card__avatar {
+  /* --max-avatar is 2rem */
+  width: var(--max-avatar);
+  height: var(--max-avatar);
+}
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+This card acts as a signpost to other content. When a user clicks on it, they should be taken to the actual blog post, so it makes sense to make the whole card clickable rather than just its title. The [Inclusive Components – Cards](https://inclusive-components.design/cards/) chapter from Heydon Pickering's Inclusive Components book taught me how to achieve this – the only difference is that I used the `inset` property instead of the `top`, `right`, `bottom` and `left` properties.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```css
+.card {
+  position: relative;
+}
 
-### Continued development
+.card__link::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+}
+```
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Lastly, I added hover and focus states to the card component. For focus styles, I used `:focus-visible` on the link and `:focus-within` on the card itself, since the Figma design indicates that the `box-shadow` changes slightly on hover. I used CSS nesting for these styles:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+```css
+.card {
+  box-shadow: var(--shadow-lg);
+  transition: box-shadow 300ms ease-in-out;
 
-### Useful resources
+  &:hover {
+    box-shadow: var(--shadow-lg-hover);
+  }
+  &:focus-within {
+    box-shadow: var(--shadow-lg-hover);
+  }
+}
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+.card__link {
+  text-decoration: none;
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+  &:hover {
+    color: var(--clr-text-hover);
+  }
+  &:focus-visible {
+    color: var(--clr-text-hover);
+    outline: 4px dotted var(--clr-text-primary);
+    outline-offset: 2px;
+  }
+}
+```
