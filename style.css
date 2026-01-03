@@ -54,3 +54,57 @@
   --shadow: 8px 8px 0 var(--clr-shadow);
   --shadow-hover: 16px 16px 0 var(--clr-shadow);
 }
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree-VariableFont.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--clr-bg-body);
+  color: var(--clr-text-primary);
+  font-family: var(--font-sans);
+  line-height: var(--lh);
+}
+
+/* --- utility classes --- */
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- end of utility classes  */
