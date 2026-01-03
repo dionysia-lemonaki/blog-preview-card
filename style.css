@@ -1,0 +1,56 @@
+:root {
+  /* colors */
+  --yellow: hsl(47 88% 63%);
+  --white: hsl(0 0% 100%);
+  --gray-500: hsl(0 0% 42%);
+  --gray-950: hsl(0 0% 7%);
+  --black: hsl(0 0 0%);
+
+  --clr-bg-body: var(--yellow);
+  --clr-bg-card: var(--white);
+  --clr-bg-accent: var(--yellow);
+  --clr-text-primary: var(--gray-950);
+  --clr-text-secondary: var(--gray-500);
+  --clr-text-hover: var(--yellow);
+  --clr-border: var(--gray-950);
+  --clr-shadow: var(--black);
+
+  /* typography */
+  --font-sans: "Figtree", sans-serif;
+  --fw-md: 500;
+  --fw-extrabold: 800;
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-xl: 1.25rem; /* 20px */
+  --fs-2xl: 1.5rem; /* 24px */
+  --fluid-sm: clamp(var(--fs-xs), 0.7143rem + 0.1786vw, var(--fs-sm));
+  --fluid-base: clamp(var(--fs-sm), 0.8393rem + 0.1786vw, var(--fs-base));
+  --fluid-xl: clamp(var(--fs-xl), 1.1786rem + 0.3571vw, var(--fs-2xl));
+  --lh: 1.5;
+
+  /* spacing */
+  --space-50: 4px;
+  --space-100: 8px;
+  --space-150: 12px;
+  --space-300: 24px;
+
+  --card-padding: var(--space-300);
+  --card-gap: var(--space-300);
+  --category-padding-block: var(--space-50);
+  --category-padding-inline: var(--space-150);
+  --content-gap: var(--space-150);
+  --author-gap: var(--space-150);
+
+  /* sizing */
+  --max-card: 24rem; /* 384px */
+  --max-avatar: 2rem; /* 32px */
+
+  /* border and shadows */
+  --border: 1px solid var(--clr-border);
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --shadow: 8px 8px 0 var(--clr-shadow);
+  --shadow-hover: 16px 16px 0 var(--clr-shadow);
+}
