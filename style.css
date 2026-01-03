@@ -124,3 +124,8 @@ body {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
 }
+
+.card__image {
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
