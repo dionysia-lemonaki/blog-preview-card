@@ -123,6 +123,7 @@ body {
   border: var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
+  position: relative;
 }
 
 .card__image {
@@ -156,6 +157,12 @@ body {
 .card__link {
   text-decoration: none;
   color: inherit;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
 }
 
 .card__description {
