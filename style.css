@@ -163,3 +163,18 @@ body {
   font-size: var(--fluid-base);
   font-weight: var(--fw-md);
 }
+
+.author {
+  gap: var(--author-gap);
+  align-items: center;
+}
+
+.author__avatar {
+  width: var(--max-avatar);
+  height: var(--max-avatar);
+}
+
+.author__name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-extrabold);
+}
