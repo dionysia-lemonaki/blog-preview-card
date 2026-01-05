@@ -124,6 +124,11 @@ body {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   position: relative;
+
+  &:hover,
+  &:focus-within {
+    box-shadow: var(--shadow-hover);
+  }
 }
 
 .card__image {
@@ -162,6 +167,16 @@ body {
     content: "";
     position: absolute;
     inset: 0;
+  }
+
+  &:hover {
+    color: var(--clr-text-hover);
+  }
+
+  &:focus-visible {
+    color: var(--clr-text-hover);
+    outline: 4px dotted var(--clr-border);
+    outline-offset: 2px;
   }
 }
 
