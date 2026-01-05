@@ -129,3 +129,37 @@ body {
   border-radius: var(--radius-md);
   object-fit: cover;
 }
+
+.card__content {
+  gap: var(--content-gap);
+}
+
+.card__category {
+  background-color: var(--clr-bg-accent);
+  align-self: flex-start;
+  padding: var(--category-padding-block) var(--category-padding-inline);
+  border-radius: var(--radius-sm);
+  font-size: var(--fluid-sm);
+  font-weight: var(--fw-extrabold);
+}
+
+.card__date {
+  font-size: var(--fluid-sm);
+  font-weight: var(--fw-md);
+}
+
+.card__title {
+  font-size: var(--fluid-xl);
+  font-weight: var(--fw-extrabold);
+}
+
+.card__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card__description {
+  color: var(--clr-text-secondary);
+  font-size: var(--fluid-base);
+  font-weight: var(--fw-md);
+}
