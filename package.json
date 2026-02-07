@@ -1,0 +1,16 @@
+{
+  "name": "blog-preview-card",
+  "version": "1.0.0",
+  "description": "This is a solution to the [Blog preview card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"**/*.{css,html}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "prettier": "3.8.1"
+  }
+}
