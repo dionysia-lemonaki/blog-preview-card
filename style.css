@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/assets/fonts/Figtree-VariableFont.woff2") format("woff2");
+}
+
+:root {
+  --yellow: hsl(47 88% 63%);
+  --white: hsl(0 0% 100%);
+  --gray-500: hsl(0 0% 42%);
+  --gray-950: hsl(0 0% 7%);
+  --black: hsl(0 0% 0%);
+
+  --font-sans: "Figtree", sans-serif;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fluid-sm: clamp(var(--fs-xs), 0.6989rem + 0.2273vw, var(--fs-sm));
+  --fluid-base: clamp(var(--fs-sm), 0.8239rem + 0.2273vw, var(--fs-base));
+  --fluid-lg: clamp(var(--fs-xl), 1.1477rem + 0.4545vw, var(--fs-2xl));
+  --fw-md: 500;
+  --fw-extrabold: 800;
+  --lh: 1.5;
+
+  --space-50: 4px;
+  --space-100: 8px;
+  --space-150: 12px;
+  --space-300: 24px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--yellow);
+  font-family: var(--font-sans);
+  font-size: var(--fluid-base);
+  line-height: var(--lh);
+}
