@@ -54,4 +54,22 @@ body {
   font-family: var(--font-sans);
   font-size: var(--fluid-base);
   line-height: var(--lh);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-300);
+}
+
+.card {
+  background-color: var(--white);
+  max-width: 24rem;
+  padding: var(--space-300);
+  border: 1px solid var(--gray-950);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 var(--black);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
 }
