@@ -115,3 +115,19 @@ body {
   color: var(--gray-500);
   font-weight: var(--fw-md);
 }
+
+.card__footer {
+  display: flex;
+  gap: var(--space-150);
+  align-items: center;
+}
+
+.card__avatar {
+  width: 2rem;
+  height: 2rem;
+}
+
+.card__name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-extrabold);
+}
