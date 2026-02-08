@@ -73,6 +73,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--space-300);
+  position: relative;
+
+  &:hover,
+  &:focus-within {
+    box-shadow: 16px 16px 0 var(--black);
+  }
 }
 
 .card__image {
@@ -109,6 +115,22 @@ body {
 .card__link {
   text-decoration: none;
   color: inherit;
+
+  &::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--yellow);
+  }
+
+  &:focus-visible {
+    outline: 4px dotted var(--gray-950);
+    outline-offset: 2px;
+  }
 }
 
 .card__description {
