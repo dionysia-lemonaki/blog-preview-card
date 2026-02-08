@@ -51,6 +51,7 @@ img {
 
 body {
   background-color: var(--yellow);
+  color: var(--gray-950);
   font-family: var(--font-sans);
   font-size: var(--fluid-base);
   line-height: var(--lh);
@@ -78,4 +79,39 @@ body {
   width: 100%;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-150);
+}
+
+.card__category {
+  background-color: var(--yellow);
+  align-self: flex-start;
+  padding: var(--space-50) var(--space-150);
+  border-radius: var(--space-50);
+  font-size: var(--fluid-sm);
+  font-weight: var(--fw-extrabold);
+}
+
+.card__date {
+  font-size: var(--fluid-sm);
+  font-weight: var(--fw-md);
+}
+
+.card__title {
+  font-size: var(--fluid-lg);
+  font-weight: var(--fw-extrabold);
+}
+
+.card__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card__description {
+  color: var(--gray-500);
+  font-weight: var(--fw-md);
 }
