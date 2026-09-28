@@ -70,3 +70,8 @@ img {
   border-radius: 20px;
   box-shadow: 8px 8px 0 hsl(0 0% 0%);
 }
+
+.card-image {
+  object-fit: cover;
+  border-radius: 10px;
+}
