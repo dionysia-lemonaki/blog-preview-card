@@ -75,3 +75,36 @@ img {
   object-fit: cover;
   border-radius: 10px;
 }
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-category {
+  background-color: var(--color-yellow);
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--text-fluid-xs);
+}
+
+.card-date {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-fluid-xs);
+}
+
+.card-link {
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--text-fluid-lg);
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-description {
+  color: var(--color-gray-500);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-fluid-sm);
+}
