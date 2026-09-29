@@ -108,3 +108,14 @@ img {
   font-weight: var(--font-weight-medium);
   font-size: var(--text-fluid-sm);
 }
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-author {
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--text-sm);
+}
