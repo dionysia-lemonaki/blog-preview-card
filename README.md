@@ -1,106 +1,167 @@
-# Frontend Mentor - Blog preview card
+# Blog Preview Card
 
-![Design preview for the Blog preview card coding challenge](./preview.jpg)
+A responsive blog preview card built with semantic HTML and modern CSS. It focuses on accessible markup, a fully clickable card with a single link, design tokens, and fluid typography.
 
-## Welcome! 👋
+## 🔗 Links
 
-Thanks for checking out this front-end coding challenge.
+Live site: [View live](https://blog-preview-card-dionysialemonaki.vercel.app/)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## ✅ Acceptance Criteria
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
-
-## The challenge
-
-Your challenge is to build out this blog preview card and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - See hover and focus states for all interactive elements on the page
 
-### Want some support on the challenge? 
+## 📸 Screenshots
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+Mobile:
 
-## Where to find everything
+![Mobile screenshot](./assets/images/screenshots/mobile.jpeg)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+Desktop:
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+![Desktop screenshot](./assets/images/screenshots/desktop.jpeg)
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## 🏗️ Built With
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+- Semantic HTML
+- CSS (custom properties, nesting, `clamp()`, Flexbox)
+- Variable web font (WOFF2)
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+## 🎨 What I Focused On
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### Semantic, Accessible Markup
 
-## Using AI coding assistants
+The card is an `<article>` labelled by its own heading via `aria-labelledby`, inside `<main>`. The publish date uses `<time datetime="2023-12-21">` so the date is machine-readable. Decorative images use `alt=""` so screen readers skip them, and every image has explicit `width` and `height` to reserve space and prevent layout shift.
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+```html
+<main>
+  <article class="card" aria-labelledby="html-css-foundations">
+    <img
+      src="./assets/images/illustration-article.svg"
+      alt=""
+      width="336"
+      height="200"
+      class="card-image"
+    />
+    <div class="card-content">
+      <p class="card-category">Learning</p>
+      <p class="card-date">
+        Published <time datetime="2023-12-21">21 Dec 2023</time>
+      </p>
+      <h2 class="card-title" id="html-css-foundations">
+        <a href="#" class="card-link">HTML & CSS foundations</a>
+      </h2>
+      <p class="card-description">
+        These languages are the backbone of every website, defining structure,
+        content, and presentation.
+      </p>
+    </div>
+    <div class="card-footer">
+      <img
+        src="./assets/images/image-avatar.webp"
+        alt=""
+        width="32"
+        height="32"
+        class="card-avatar"
+      />
+      <p class="card-author">Greg Hooper</p>
+    </div>
+  </article>
+</main>
+```
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+### Fully Clickable Card With One Link
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+Screen readers announce a single, clear link name instead of the entire card's content, which is what happens when the whole card is wrapped in an `<a>`.
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+A `::after` pseudo-element on that link stretches across the positioned `.card`, so the whole card is clickable with the mouse. Hovering anywhere on the card triggers the link's hover state, and `:focus-visible` gives keyboard users a clear outline.
 
-## Building your project
+```css
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: var(--color-white);
+  max-width: 24rem;
+  padding: 24px;
+  border: 1px solid var(--color-gray-950);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 hsl(0 0% 0%);
+  position: relative;
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+  &:hover {
+    box-shadow: 16px 16px 0 hsl(0 0% 0%);
+  }
+}
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+.card-link {
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--text-fluid-lg);
+  color: inherit;
+  text-decoration: none;
 
-## Deploying your project
+  &:hover {
+    color: var(--color-yellow);
+  }
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+  &:focus-visible {
+    outline: 2px solid var(--color-gray-950);
+    outline-offset: 2px;
+  }
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+}
+```
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+### Design Tokens With Custom Properties
 
-## Create a custom `README.md`
+Colors, font family, weights, and the type scale are defined once on `:root` and reused everywhere, so the design system lives in one place and stays consistent.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+```css
+:root {
+  --color-yellow: hsl(47 88% 63%);
+  --color-gray-950: hsl(0 0% 7%);
+  --color-gray-500: hsl(0 0% 42%);
+  --color-white: hsl(0 0% 100%);
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+  --font-figtree: "Figtree", sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-extrabold: 800;
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-fluid-xs: clamp(var(--text-xs), 0.7143rem + 0.1786vw, var(--text-sm));
+  --text-fluid-sm: clamp(
+    var(--text-sm),
+    0.8393rem + 0.1786vw,
+    var(--text-base)
+  );
+  --text-fluid-lg: clamp(var(--text-xl), 1.1786rem + 0.3571vw, var(--text-2xl));
+}
+```
 
-## Submitting your solution
+### Fluid Typography Without Media Queries
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+Font sizes scale smoothly between a minimum and maximum using `clamp()`, built on the same rem-based scale tokens. The text adapts to any viewport without breakpoints.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+```css
+:root {
+  --text-fluid-lg: clamp(var(--text-xl), 1.1786rem + 0.3571vw, var(--text-2xl));
+}
+```
 
-## Sharing your solution
+### Performance and Clean CSS
 
-There are multiple places you can share your solution:
+The variable font is self-hosted as WOFF2 with `font-display: swap`, so text renders immediately while the font loads. A small reset (`box-sizing: border-box`, zeroed margins) keeps the base predictable, and native CSS nesting keeps hover, focus, and pseudo-element styles next to the rule they belong to.
 
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+## Credits
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+Design from [Frontend Mentor](https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS)
